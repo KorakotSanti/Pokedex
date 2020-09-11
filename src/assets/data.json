@@ -1,0 +1,11 @@
+[
+    {"id":1, "name":"Bulbasaur", "type":"Grass/Poison", "imgUrl":"001.png"},
+    {"id":2, "name":"Ivysaur", "type":"Grass/Poison", "imgUrl":"002.png"},
+    {"id":3, "name":"Venusaur", "type":"Grass/Poison", "imgUrl":"003.png"},
+    {"id":4, "name":"Charmander", "type":"Fire", "imgUrl":"004.png"},
+    {"id":5, "name":"Charmeleon", "type":"Fire", "imgUrl":"005.png"},
+    {"id":6, "name":"Charizard", "type":"Fire/Flying", "imgUrl":"006.png"},
+    {"id":7, "name":"Squirtle", "type":"Water", "imgUrl":"007.png"},
+    {"id":8, "name":"Wartortle", "type":"Water", "imgUrl":"008.png"},
+    {"id":9, "name":"Blastoise", "type":"Water", "imgUrl":"009.png"}
+]
