@@ -10,7 +10,7 @@
         <tbody>
             <tr *ngFor="let p of pokemonList">
                 <td>{{p.id}}</td>
-                <td><img [src]="'./assets/'+p.imgUrl" width="100" height="100"></td>
+                <td><img [src]="'./assets/pokemon_image/'+p.imgUrl" width="100" height="100"></td>
                 <td>{{p.name}}</td>
                 <td>{{p.type}}</td>
                 <button class="btn btn-primary" (click)="setPokemonInfo(p)">PokeStats</button>
