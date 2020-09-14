@@ -1,0 +1,26 @@
+<div class="col-md-6 offset-md-3">
+    <div class="card">
+        <div class="card-header bg-primary">
+            <h1>Add Pokemon</h1>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="pokeForm">
+                <label>Pokemon Id</label>
+                <input type="text" class="form-control" formControlName="pokeId">   
+                <div *ngIf="pokeForm.get('pokeId').invalid && pokeForm.get('pokeId').touched">
+                    <div class="alert-danger" *ngIf="pokeForm.get('pokeId').hasError('required')">Pokemon Id is Mandatory</div>
+                    <div class="alert-danger" *ngIf="pokeForm.get('pokeId').hasError('maxlength')">Pokemon Id maxlength </div>
+                </div>
+
+                <label>Pokemon Name</label>
+                <input type="text" class="form-control" formControlName="pokeName">
+
+                <label>Pokemon Type</label>
+                <input type="text" class="form-control" formControlName="pokeType">
+
+                <label>Pokemon Image</label>
+                <input type="file" class="form-control" formControlName="pokeImg">
+            </form>
+        </div>
+    </div>
+</div>
