@@ -2,6 +2,7 @@ package com.pokedex.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -27,7 +28,18 @@ public class PokemonServiceImpl implements PokemonService{
 		for(Pokemon p: pokemons) {
 			pList.add(PokemonDTO.entityToDTO(p));
 		}
+		if(pList.isEmpty()) {
+			throw new PokemonException("PokemonService.NO_POKEMON_FOUND");
+		}
 		return pList;
+	}
+	
+	@Override
+	public PokemonDTO getPokemonById(String poke_id) throws PokemonException {
+		Optional<Pokemon> poke = pokemonRepository.findById(poke_id);
+		Pokemon pokemon = poke.orElseThrow(()-> new PokemonException("PokemonService.NO_POKEMON_FOUND"));
+		return PokemonDTO.entityToDTO(pokemon);
+		
 	}
 
 }

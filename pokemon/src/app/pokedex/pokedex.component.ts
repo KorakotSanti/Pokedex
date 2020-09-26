@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Pokemon } from '../pokemon';
 import { PokemonService } from './pokemon.service';
 
@@ -11,13 +12,9 @@ export class PokedexComponent implements OnInit {
 
   errorMessage:string;
   pokemonList:Pokemon[];
-  pokemonInfo:Pokemon;
 
-  setPokemonInfo(p:Pokemon){
-    this.pokemonInfo = p;
-  }
-
-  constructor(private pokemonService:PokemonService) { }
+  constructor(private pokemonService:PokemonService,
+              private router:Router) { }
 
   ngOnInit(): void {
     this.pokemonService.getAllPokemon().subscribe(
@@ -26,4 +23,7 @@ export class PokedexComponent implements OnInit {
             console.log("error");});
   }
 
+  setPokemonInfo(p:Pokemon){
+    this.router.navigateByUrl('/pokemonDetail/'+p.pokeId);
+  }
 }

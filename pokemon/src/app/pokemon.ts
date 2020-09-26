@@ -1,5 +1,5 @@
 export class Pokemon {
-    id:number;
+    pokeId:string;
     name:string;
     type:string;
     imgUrl:string;

@@ -9,7 +9,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let p of pokemonList">
-                <td>{{p.id}}</td>
+                <td>{{p.pokeId}}</td>
                 <td><img [src]="'./assets/pokemon_image/'+p.imgUrl" width="100" height="100"></td>
                 <td>{{p.name}}</td>
                 <td>{{p.type}}</td>
@@ -21,8 +21,5 @@
 <br>
 <div *ngIf="errorMessage">
     <h1 class="text-danger">{{errorMessage}}</h1>
-</div>
-<div class="col-md-4" *ngIf="pokemonInfo">
-    <app-poke-details [pokeInfo]="pokemonInfo"></app-poke-details>
 </div>
 </div>

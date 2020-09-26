@@ -8,4 +8,5 @@ import com.pokedex.exception.PokemonException;
 
 public interface PokemonService {
 	List<PokemonDTO> getAllPokemon() throws PokemonException;
+	PokemonDTO getPokemonById(String poke_id) throws PokemonException;
 }
