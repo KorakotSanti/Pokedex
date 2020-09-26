@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { PokedexComponent } from './pokedex/pokedex.component';
 import { PokeDetailsComponent } from './poke-details/poke-details.component';
-import { PokemonService } from './pokemon.service';
+import { PokemonService } from './pokedex/pokemon.service';
 import { PokeformComponent } from './pokeform/pokeform.component';
 
 @NgModule({
