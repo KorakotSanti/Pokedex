@@ -10,6 +10,18 @@ create table pokemon(
 	img_url VARCHAR(250)
 );
 
+create table stats(
+	stats_id INT PRIMARY KEY AUTO_INCREMENT,
+	poke_id VARCHAR(4),
+	health_point INT,
+	attack INT,
+	defence INT,
+	special_attack INT,
+	special_defence INT,
+	speed INT,
+	FOREIGN KEY(poke_id) REFERENCES pokemon(poke_id) on delete cascade
+);
+
 insert into pokemon()
 values
 ('#001', 'Bulbasaur', 'Grass/Poison', '001.png'),
@@ -515,5 +527,18 @@ values
 ('#501', 'Oshawott', 'Water', '501.png'),
 ('#502', 'Dewott', 'Water', '502.png'),
 ('#503', 'Samurott', 'Water', '503.png');
+
+insert into stats(poke_id, health_point, attack, defence, special_attack, special_defence, speed)
+values
+('#001', 3, 3, 3, 4, 4, 3),
+('#002', 4, 4, 4, 5, 5, 4),
+('#003', 5, 5, 5, 6, 6, 5),
+('#004', 3, 4, 3, 4, 3, 4),
+('#005', 4, 4, 4, 5, 4, 5),
+('#006', 5, 5, 5, 7, 5, 6),
+('#007', 3, 3, 4, 3, 4, 3),
+('#008', 4, 4, 5, 4, 5, 4),
+('#009', 5, 5, 6, 5, 7, 5);
 commit;
 select * from pokemon;
+select * from stats;
